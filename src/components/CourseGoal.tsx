@@ -1,0 +1,27 @@
+import { FC } from 'react';
+
+interface CourseGoalProps {
+  id: number;
+  title: string;
+  description: string;
+  onDelete: (id: number) => void;
+}
+
+const CourseGoal: FC<CourseGoalProps> = ({
+  id,
+  title,
+  description,
+  onDelete,
+}) => {
+  return (
+    <article>
+      <div>
+        <h2>{title}</h2>
+        <p>{description}</p>
+      </div>
+      <button onClick={() => onDelete(id)}>Delete</button>
+    </article>
+  );
+};
+
+export default CourseGoal;
